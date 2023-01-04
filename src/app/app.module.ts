@@ -12,6 +12,8 @@ import { BodyComponent } from './body/body.component';
 import { BookPriceCalculatorComponent } from './components/book-price-calculator/book-price-calculator.component';
 import { ItemXpCalculatorComponent } from './components/item-xp-calculator/item-xp-calculator.component';
 import { MatTableModule } from '@angular/material/table' 
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { MatTableModule } from '@angular/material/table'
     CommonModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(),
-    MatTableModule
+    MatTableModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent],
