@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 export interface PeriodicElement {
   type: string;
@@ -23,14 +24,28 @@ export class BookPriceCalculatorComponent implements OnInit {
 
   displayedColumns: string[] = ['type', 'profit', 'myProfit', 'teamProfit'];
   dataSource: any
-  
-  ngOnInit(): void {
-    this.bookPriceCalculateIt()
+
+  adSoyad = new FormControl('');
+
+
+ 
+ temizle(){
+   this.adSoyad.reset();
   }
 
-  bookPriceCalculateIt(){
+  ngOnInit(): void {
+    
+  }
 
-    let bookPrice = 5000
+  onKeypressEvent(event: any){
+    console.log(event.target.value);
+  }
+
+  onSubmit(value: any) {
+
+    console.log(value.target.value);
+
+    let bookPrice = value.target.value
     let minPrice = 1
     let komisyon = (bookPrice*5)/100
     let bookPriceWithOutKomisyon = bookPrice - komisyon

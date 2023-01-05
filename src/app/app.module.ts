@@ -13,6 +13,7 @@ import { BookPriceCalculatorComponent } from './components/book-price-calculator
 import { ItemXpCalculatorComponent } from './components/item-xp-calculator/item-xp-calculator.component';
 import { MatTableModule } from '@angular/material/table' 
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(),
     MatTableModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
