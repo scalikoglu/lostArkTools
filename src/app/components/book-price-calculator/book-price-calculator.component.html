@@ -1,48 +1,139 @@
-<p></p>
-  <div class="form-group input-group">
-    <div class="input-group-prepend">
-      <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-    </div>
-    <input name="" class="form-control" placeholder="Ad Soyad" type="text" [formControl]="adSoyad">
-  </div>
-  <div class="form-group">
+<div class="form-group input-group">
+  <div class="input-group-prepend"></div>
+</div>
+<div class="form-group">
+  <mat-card class="headerCard">
     
-    <input type="text" (keyup)="onSubmit($event)" />
-
-  </div>
-<p> Girilen İsim: {{adSoyad.value}}</p>
-
+    <mat-card-content class="d-flex justify-content-center">
+      <div class="imgTransform">
+</div>
+      <p><input type="text" (keyup)="onSubmit($event)" /></p>
+      <p>Book Price: {{ price }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>
+<img
+src="../../../assets/images/engravingBook.jpg"
+style="width:100px"
+/>
+<p></p>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
   <!-- Position Column -->
   <ng-container matColumnDef="demo-position">
-    <th mat-header-cell *matHeaderCellDef> No. </th>
-    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    <th mat-header-cell *matHeaderCellDef>No.</th>
+    <td mat-cell *matCellDef="let element">{{ element.position }}</td>
   </ng-container>
 
   <!-- type Column -->
   <ng-container matColumnDef="type">
-    <th mat-header-cell *matHeaderCellDef> </th>
-    <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td
+      mat-cell
+      *matCellDef="let element"
+      [ngStyle]="{
+        color:
+          element.position == 1
+            ? '#198754'
+            : '' || element.position == 2
+            ? '#198754'
+            : '' || element.position == 3
+            ? '#ffc107'
+            : '' || element.position == 4
+            ? '#dc3545'
+            : ''
+      }"
+    >
+      {{ element.type }}
+    </td>
+  </ng-container>
+  
+  <!-- offer Column -->
+  <ng-container matColumnDef="offer">
+    <th mat-header-cell *matHeaderCellDef>Offer</th>
+    <td
+      mat-cell
+      *matCellDef="let element"
+      [ngStyle]="{
+        color:
+          element.position == 1
+            ? '#198754'
+            : '' || element.position == 2
+            ? '#198754'
+            : '' || element.position == 3
+            ? '#ffc107'
+            : '' || element.position == 4
+            ? '#dc3545'
+            : ''
+      }"
+    >
+      {{ element.offer }}
+    </td>
   </ng-container>
 
-  <!-- profit Column -->
-  <ng-container matColumnDef="profit">
-    <th mat-header-cell *matHeaderCellDef> Profit </th>
-    <td mat-cell *matCellDef="let element"> {{element.profit}} </td>
-  </ng-container>
+
+    <!-- income Column -->
+    <ng-container matColumnDef="income">
+      <th mat-header-cell *matHeaderCellDef>income</th>
+      <td
+        mat-cell
+        *matCellDef="let element"
+        [ngStyle]="{
+          color:
+            element.position == 1
+              ? '#198754'
+              : '' || element.position == 2
+              ? '#198754'
+              : '' || element.position == 3
+              ? '#ffc107'
+              : '' || element.position == 4
+              ? '#dc3545'
+              : ''
+        }"
+      >
+        +{{ element.income }}
+      </td>
+    </ng-container>
 
   <!-- myProfit Column -->
   <ng-container matColumnDef="myProfit">
-    <th mat-header-cell *matHeaderCellDef> MyProfit </th>
-    <td mat-cell *matCellDef="let element"> {{element.myProfit}} </td>
+    <th mat-header-cell *matHeaderCellDef>MyProfit</th>
+    <td
+      mat-cell
+      *matCellDef="let element"
+      [ngStyle]="{
+        color:
+          element.position == 1
+            ? '#198754'
+            : '' || element.position == 2
+            ? '#198754'
+            : '' || element.position == 3
+            ? '#ffc107'
+            : '' || element.position == 4
+            ? '#dc3545'
+            : ''
+      }"
+    >
+      {{ element.myProfit }}
+    </td>
   </ng-container>
 
-    <!-- teamProfit Column -->
-    <ng-container matColumnDef="teamProfit">
-        <th mat-header-cell *matHeaderCellDef> TeamProfit </th>
-        <td mat-cell *matCellDef="let element"> {{element.teamProfit}} </td>
-      </ng-container>
+  <!-- teamProfit Column -->
+  <ng-container matColumnDef="teamProfit">
+    <th mat-header-cell *matHeaderCellDef>TeamProfit</th>
+    <td mat-cell *matCellDef="let element"       [ngStyle]="{
+        color:
+          element.position == 1
+            ? '#198754'
+            : '' || element.position == 2
+            ? '#198754'
+            : '' || element.position == 3
+            ? '#ffc107'
+            : '' || element.position == 4
+            ? '#dc3545'
+            : ''
+      }">{{ element.teamProfit }}</td>
+  </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>

@@ -4,9 +4,11 @@ import { FormControl } from '@angular/forms';
 export interface PeriodicElement {
   type: string;
   position: number;
-  profit: number;
+  offer: number;
+  income: number;
   myProfit: number;
   teamProfit: number;
+
 }
 
 /**
@@ -22,19 +24,22 @@ export class BookPriceCalculatorComponent implements OnInit {
 
   constructor() { }
 
-  displayedColumns: string[] = ['type', 'profit', 'myProfit', 'teamProfit'];
+  displayedColumns: string[] = ['type', 'offer', 'income', 'myProfit', 'teamProfit'];
   dataSource: any
-
-  adSoyad = new FormControl('');
-
-
+  price: any 
  
  temizle(){
-   this.adSoyad.reset();
+  
   }
 
   ngOnInit(): void {
-    
+    const ELEMENT_DATA: PeriodicElement[] = [
+      {position: 1, type: 'En İyi Teklif', offer: 0,income:0, myProfit: 0, teamProfit: 0},
+      {position: 2, type: 'Ortalama Teklif', offer: 0,income:0, myProfit: 0, teamProfit: 0},
+      {position: 3, type: 'Kötü Teklif', offer: 0,income:0, myProfit: 0, teamProfit: 0},
+      {position: 4, type: 'Zarar Teklif', offer: 0,income:0, myProfit: 0, teamProfit: 0},
+    ];
+    this.dataSource = ELEMENT_DATA;
   }
 
   onKeypressEvent(event: any){
@@ -45,6 +50,7 @@ export class BookPriceCalculatorComponent implements OnInit {
 
     console.log(value.target.value);
 
+    this.price = value.target.value
     let bookPrice = value.target.value
     let minPrice = 1
     let komisyon = (bookPrice*5)/100
@@ -54,26 +60,30 @@ export class BookPriceCalculatorComponent implements OnInit {
     let bestBit = bookPriceWithOutKomisyon - teamPrice * 2
     let bestDeal = bookPriceWithOutKomisyon - (bookPriceWithOutKomisyon - teamPrice * 2)
     let bestTeamPrice = bestBit / 7
+    let bestIncome = bestDeal-bestTeamPrice
 
     let goodBit = bookPriceWithOutKomisyon - teamPrice * 1.7
     let goodDeal = bookPriceWithOutKomisyon - (bookPriceWithOutKomisyon - teamPrice * 1.7)
-    let goodTeamPrice = bestBit / 7
+    let goodTeamPrice = goodBit / 7
+    let goodIncome = goodDeal - goodTeamPrice
 
     let normalBit = bookPriceWithOutKomisyon - teamPrice * 1.5
     let normalDeal = bookPriceWithOutKomisyon - (bookPriceWithOutKomisyon - teamPrice * 1.5)
-    let normalTeamPrice = bestBit / 7
+    let normalTeamPrice = normalBit / 7
+    let normalIncome = normalDeal - normalTeamPrice
 
     let Bit = bookPriceWithOutKomisyon - teamPrice * 1
     let Deal = bookPriceWithOutKomisyon - (bookPriceWithOutKomisyon - teamPrice * 1)
-    let TeamPrice = bestBit / 7
+    let TeamPrice = Bit / 7
+    let Income = Deal - TeamPrice
 
     const ELEMENT_DATA: PeriodicElement[] = [
-      {position: 1, type: 'En İyi Teklif', profit: bestBit, myProfit: bestDeal, teamProfit: bestTeamPrice},
-      {position: 2, type: 'Ortalama Teklif', profit: goodBit, myProfit: goodDeal, teamProfit: goodTeamPrice},
-      {position: 3, type: 'Kötü Teklif', profit: normalBit, myProfit: normalDeal, teamProfit: normalTeamPrice},
-      {position: 4, type: 'Zarar Teklif', profit: Bit, myProfit: Deal, teamProfit: TeamPrice},
-    
+      {position: 1, type: 'En İyi Teklif', offer: Math.round(bestBit),income:Math.round(bestIncome), myProfit: Math.round(bestDeal), teamProfit: Math.round(bestTeamPrice)},
+      {position: 2, type: 'Ortalama Teklif', offer: Math.round(goodBit),income:Math.round(goodIncome), myProfit: Math.round(goodDeal), teamProfit: Math.round(goodTeamPrice)},
+      {position: 3, type: 'Kötü Teklif', offer: Math.round(normalBit),income:Math.round(normalIncome), myProfit: Math.round(normalDeal), teamProfit: Math.round(normalTeamPrice)},
+      {position: 4, type: 'Zarar Teklif', offer: Math.round(Bit),income:Math.round(Income), myProfit: Math.round(Deal), teamProfit: Math.round(TeamPrice)},
     ];
+
     this.dataSource = ELEMENT_DATA;
   }
 

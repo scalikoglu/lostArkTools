@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'ilanlar', pathMatch: 'full' },
+  { path: '', redirectTo: 'bookpricecalculator', pathMatch: 'full' },
   { path: 'bookpricecalculator', component: BookPriceCalculatorComponent},
   { path: 'itemxpcalculator', component: ItemXpCalculatorComponent},
 ];
