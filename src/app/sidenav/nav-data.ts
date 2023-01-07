@@ -1,14 +1,20 @@
 export const navbarData = [
+  {
+    routeLink: 'bookpricecalculator',
+    icon: 'fas fa-list-alt',
+    label: 'Book Price Calculator',
+  },
+    {
+      routeLink: 'mappricecalculator',
+      icon: 'fas fa-list-alt',
+      label: 'Map Price Calculator',
+    },
     {
       routeLink: 'itemxpcalculator',
       icon: 'fas fa-list-alt',
       label: 'Item Xp Calculator',
     },
-    {
-      routeLink: 'bookpricecalculator',
-      icon: 'fas fa-list-alt',
-      label: 'Book Price Calculator',
-    },  /*
+     /*
     {
       routeLink: 'islemler',
       icon: 'fas fa-list-alt',

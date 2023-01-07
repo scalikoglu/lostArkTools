@@ -16,7 +16,18 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import {MatCardModule} from '@angular/material/card';
+import { TopCardComponent } from './components/top-card/top-card.component';
 
+import {MatDividerModule} from '@angular/material/divider';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
+import {MatGridListModule} from '@angular/material/grid-list';
+import { MapPriceCalculatorComponent } from './components/map-price-calculator/map-price-calculator.component';
+import { MatSelectModule} from '@angular/material/select';
+
+import { MtxTooltipModule } from '@ng-matero/extensions/tooltip';
+import { MtxGridModule } from '@ng-matero/extensions/grid';
+import { MtxSelectModule } from '@ng-matero/extensions/select';
 
 @NgModule({
   declarations: [
@@ -24,7 +35,9 @@ import {MatCardModule} from '@angular/material/card';
     SidenavComponent,
     BodyComponent,
     BookPriceCalculatorComponent,
-    ItemXpCalculatorComponent
+    ItemXpCalculatorComponent,
+    TopCardComponent,
+    MapPriceCalculatorComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +48,15 @@ import {MatCardModule} from '@angular/material/card';
     MatTableModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    MatCardModule
+    MatCardModule,
+    MatDividerModule,
+    MatProgressBarModule,
+    MatGridListModule,
+    MatSelectModule,
+    MtxTooltipModule,
+    MtxGridModule,
+    MtxSelectModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent],

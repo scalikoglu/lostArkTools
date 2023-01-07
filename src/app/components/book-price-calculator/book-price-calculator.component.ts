@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, UntypedFormControl } from '@angular/forms';
+import { TooltipPosition } from '@angular/material/tooltip';
 
 export interface PeriodicElement {
   type: string;
@@ -28,6 +29,9 @@ export class BookPriceCalculatorComponent implements OnInit {
   dataSource: any
   price: any 
  
+  positionOptions: TooltipPosition[] = ['after', 'before', 'above', 'below', 'left', 'right'];
+  position = new UntypedFormControl(this.positionOptions[0]);
+
  temizle(){
   
   }

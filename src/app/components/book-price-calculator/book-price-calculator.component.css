@@ -1,53 +1,61 @@
 .demo-table {
-    width: 100%;
-  }
+  width: 100%;
+}
+
+.mat-column-type {
+  width: 15%;
+  border-right: 1px solid currentColor;
+  padding-right: 24px;
+  text-align: center;
+}
+
+.mat-column-offer {
+  padding-left: 16px;
+  font-size: 20px;
+}
+
+.mat-column-income {
+  padding-left: 16px;
+  font-size: 20px;
+}
+
+.mat-column-profit {
+  padding-left: 16px;
+  font-size: 20px;
+}
+
+.mat-column-myProfit {
+  padding-left: 16px;
+  font-size: 20px;
+}
+
+.mat-column-teamProfit {
+  padding-left: 16px;
+  font-size: 20px;
+}
+
+.headerCard {
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.example-card {
   
-  .mat-column-type {
-    width: 15%;
-    border-right: 1px solid currentColor;
-    padding-right: 24px;
-    text-align: center;
-  }
+  max-width: 200px;
+}
 
-  .mat-column-offer {
-    padding-left: 16px;
-    font-size: 20px;
-  }
+.example-header-image {
+  background-image: url('../../../assets/images/lostArk.jpg');
+  background-size: cover;
+}
 
-  .mat-column-income {
-    padding-left: 16px;
-    font-size: 20px;
-  }
+.mat-button-base {
+  margin: 0 .5rem;
+}
 
-  .mat-column-profit {
-    padding-left: 16px;
-    font-size: 20px;
-  }
-  
-  .mat-column-myProfit {
-    padding-left: 16px;
-    font-size: 20px;
-  }
-  
-  .mat-column-teamProfit {
-    padding-left: 16px;
-    font-size: 20px;
-  }
-
-  .headerCard {
-    max-width: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-
-  div{
-    transform: perspective(1500px) rotateY(15deg);
-    border-radius: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-    transition: transform 1s ease 0s;
-
-  }
-  div:hover {
-    transform: perspective(3000px) rotateY(5deg);}
+.text-right {
+  text-align: right;
+}
