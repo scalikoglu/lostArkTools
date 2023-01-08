@@ -1,19 +1,144 @@
 <div class="container">
+
+<ng-template #legendaryMapTogle>
+  <div class="legendaryTogle">
+  <div [style]="{color:'#198754'}">This is a template!</div>
+  <div>Ceci est un modèle!</div>
+  <div>这是一个模板!</div>
+  <div>これはテンプレートです!</div>
+  <div class="text-right">هذا قالب!</div>
+</div>
+</ng-template>
+
+<ng-template #epikMapTogle>
+  <div class="epikTogle">
+  <div [style]="{color:'#198754'}">This is a template!</div>
+  <div>Ceci est un modèle!</div>
+  <div>这是一个模板!</div>
+  <div>これはテンプレートです!</div>
+  <div class="text-right">هذا قالب!</div>
+</div>
+</ng-template>
+
+<ng-template #rareMapTogle>
+  <div class="rareTogle">
+  <div [style]="{color:'#198754'}">This is a template!</div>
+  <div>Ceci est un modèle!</div>
+  <div>这是一个模板!</div>
+  <div>これはテンプレートです!</div>
+  <div class="text-right">هذا قالب!</div>
+</div>
+</ng-template>
+
+<ng-template #uncommonMapTogle>
+  <div class="uncommontogle">
+  <div [style]="{color:'#198754'}">This is a template!</div>
+  <div>Ceci est un modèle!</div>
+  <div>这是一个模板!</div>
+  <div>これはテンプレートです!</div>
+  <div class="text-right">هذا قالب!</div>
+</div>
+</ng-template>
+
+<ng-template #solarProtectionTogle>
+  <div class="epikTogle">
+  <div [style]="{color:'#198754'}">This is a template!</div>
+  <div>Ceci est un modèle!</div>
+  <div>这是一个模板!</div>
+  <div>これはテンプレートです!</div>
+  <div class="text-right">هذا قالب!</div>
+</div>
+</ng-template>
+
+<ng-template #honorShardPounchLargeTogle>
+  <div class="epikTogle">
+  <div [style]="{color:'#198754'}">This is a template!</div>
+  <div>Ceci est un modèle!</div>
+  <div>这是一个模板!</div>
+  <div>これはテンプレートです!</div>
+  <div class="text-right">هذا قالب!</div>
+</div>
+</ng-template>
+
+<ng-template #solarBlessingTogle>
+  <div class="rareTogle">
+  <div [style]="{color:'#198754'}">This is a template!</div>
+  <div>Ceci est un modèle!</div>
+  <div>这是一个模板!</div>
+  <div>これはテンプレートです!</div>
+  <div class="text-right">هذا قالب!</div>
+</div>
+</ng-template>
+
+<ng-template #sonorShardPounchMediumTogle>
+  <div class="rareTogle">
+  <div [style]="{color:'#198754'}">This is a template!</div>
+  <div>Ceci est un modèle!</div>
+  <div>这是一个模板!</div>
+  <div>これはテンプレートです!</div>
+  <div class="text-right">هذا قالب!</div>
+</div>
+</ng-template>
+
+<ng-template #solarGraceTogle>
+  <div class="uncommonTogle">
+  <div [style]="{color:'#198754'}">This is a template!</div>
+  <div>Ceci est un modèle!</div>
+  <div>这是一个模板!</div>
+  <div>これはテンプレートです!</div>
+  <div class="text-right">هذا قالب!</div>
+</div>
+</ng-template>
+
+<ng-template #honorShardPounchSmallTogle>
+  <div class="uncommonTogle">
+  <div [style]="{color:'#198754'}">This is a template!</div>
+  <div>Ceci est un modèle!</div>
+  <div>这是一个模板!</div>
+  <div>これはテンプレートです!</div>
+  <div class="text-right">هذا قالب!</div>
+</div>
+</ng-template>
+
+
+
+  <div class="d-flex justify-content-center">
+    <section>
+      <h4>Which Map do you choose?</h4>
+      <mat-button-toggle-group [(ngModel)]="selectedMap" aria-label="Font Style">
+        <mat-button-toggle value="legendary" class="legendaryCard" (click)="setLegendaryMap()">
+            <img src="../../../assets/images/lostArkMaps.png" [mtxTooltip]="legendaryMapTogle"
+            [mtxTooltipPosition]="position.value" [width]="60" [height]="60" class="" alt="...">
+        </mat-button-toggle>
+        <mat-button-toggle value="epik" class="epikCard" (click)="setEpikMap()">
+            <img src="../../../assets/images/lostArkMaps.png" [mtxTooltip]="epikMapTogle"
+            [mtxTooltipPosition]="position.value" [width]="60" [height]="60" class="" alt="...">
+        </mat-button-toggle>
+        <mat-button-toggle value="rare" class="rareCard" (click)="setRareMap()">
+          <img src="../../../assets/images/lostArkMaps.png" [mtxTooltip]="rareMapTogle"
+          [mtxTooltipPosition]="position.value" [width]="60" [height]="60" class="" alt="...">
+      </mat-button-toggle>
+      </mat-button-toggle-group>
+      <p>Chosen value is {{selectedMap}}</p>
+    </section>
+  </div>
+
     <div class="row">
         <div class="col">
             
-            <div class="card mb-3 editCard">
+            <div [ngClass]="selectedMap == 'rare' ? 'disabledDiv' : ''" class="card mb-3 editCard">
                 <div class="row g-0">
                   <div class="col-md-4 epikCard ">
-                    <img src="../../../assets/images/solarProtection.png" [width]="85" [height]="85" class="" alt="...">
+                    <img src="../../../assets/images/solarProtection.png" [mtxTooltip]="solarProtectionTogle"
+                    [mtxTooltipPosition]="position.value" [width]="85" [height]="85" class="" alt="...">
                   </div>
                   <div class="col-md-8">
                     
                     <div class="card-body">
                       <h5 class="card-title">Solar Protection</h5>
-                      <p>Each<input type="text" value="4" class="form-control form-control-sm each" (keyup)="setSolarProtectionEach($event)" /></p>
+                      <p>Each<input type="text" value={{solarProtectionEach}} class="form-control form-control-sm each" (keyup)="setSolarProtectionEach($event)" /></p>
                       <p>Price<input type="text" class="form-control form-control-sm priceInput" (keyup)="setSolarProtectionPrice($event)" /></p>
-                      <p>Solar Protection: {{ solarProtectionPrice * solarProtectionEach }}</p>
+                      <p>Local Price: {{ solarProtectionPrice * solarProtectionEach }} Gold</p>
                     </div>
                   </div>
                 </div>
@@ -22,17 +147,18 @@
         </div>
         <div class="col">
             
-            <div class="card mb-3 editCard">
+            <div [ngClass]="selectedMap == 'rare' || selectedMap == 'epik' ? 'disabledDiv' : ''" class="card mb-3 editCard">
                 <div class="row g-0">
                   <div class="col-md-4 epikCard">
-                    <img src="../../../assets/images/honorShardLarge.png" [width]="85" [height]="85" class="" alt="...">
+                    <img src="../../../assets/images/honorShardLarge.png" [mtxTooltip]="honorShardPounchLargeTogle"
+                    [mtxTooltipPosition]="position.value" [width]="85" [width]="85" [height]="85" class="" alt="...">
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
                       <h5 class="card-title">Honor Shard Pounch(L)</h5>
-                      <p>Each<input type="text" value="8" class="form-control form-control-sm each" (keyup)="setHonorShardPounchEach($event)" /></p>
-                      <p>Price<input type="text" class="form-control form-control-sm priceInput" (keyup)="setHonorShardPounchPrice($event)" /></p>
-                      <p>Honor Shard Pounch: {{ honorShardPounchPrice * honorShardPounchEach }}</p>
+                      <p>Each<input type="text" value={{honorShardPounchLargeEach}} class="form-control form-control-sm each" (keyup)="setHonorShardPounchLargeEach($event)" /></p>
+                      <p>Price<input type="text" class="form-control form-control-sm priceInput" (keyup)="setHonorShardPounchLargePrice($event)" /></p>
+                      <p>Local Price: {{ honorShardPounchLargePrice * honorShardPounchLargeEach }} Gold</p>
                     </div>
                   </div>
                 </div>
@@ -42,18 +168,19 @@
     </div>
     <div class="row">
         <div class="col">
-            
-            <div class="card mb-3 editCard">
+        
+              <div class="card mb-3 editCard">
                 <div class="row g-0">
-                  <div class="col-md-4 uncommonCard">
-                    <img src="../../../assets/images/solarGrace.png" [width]="85" [height]="85" class="" alt="...">                  
+                  <div class="col-md-4 rareCard">
+                    <img src="../../../assets/images/solarBlessing.png" [mtxTooltip]="solarBlessingTogle"
+                    [mtxTooltipPosition]="position.value" [width]="85" [height]="85" class="" alt="...">
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
-                      <h5 class="card-title">Solar Grace</h5>
-                      <p>Each<input type="text" value="8" class="form-control form-control-sm each" (keyup)="setSolarGraceEach($event)" /></p>
-                      <p>Price<input type="text" class="form-control form-control-sm priceInput" (keyup)="setSolarGracePrice($event)" /></p>
-                      <p>Solar Grace: {{ solarGracePrice *solarGraceEach }}</p>
+                      <h5 class="card-title">Solar Blessing</h5>
+                      <p>Each<input type="text" value={{solarBlessingEach}} class="form-control form-control-sm each" (keyup)="setSolarBlessingEach($event)" /></p>
+                      <p>Price<input type="text" class="form-control form-control-sm priceInput" (keyup)="setSolarBlessingPrice($event)" /></p>
+                      <p>Local Price: {{ solarBlessingPrice * solarBlessingEach }} Gold</p>
                     </div>
                   </div>
                 </div>
@@ -61,25 +188,70 @@
 
         </div>
         <div class="col">
-            
-            <div class="card mb-3 editCard">
-                <div class="row g-0">
-                  <div class="col-md-4 rareCard">
-                    <img src="../../../assets/images/solarBlessing.png" [width]="85" [height]="85" class="" alt="...">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h5 class="card-title">Solar Blessing</h5>
-                      <p>Each<input type="text" value="12" class="form-control form-control-sm each" (keyup)="setSolarBlessingEach($event)" /></p>
-                      <p>Price<input type="text" class="form-control form-control-sm priceInput" (keyup)="setSolarBlessingPrice($event)" /></p>
-                      <p>Solar Blessing: {{ solarBlessingPrice * solarBlessingEach }}</p>
-                    </div>
-                  </div>
+
+          <div [ngClass]="selectedMap == 'legendary' || selectedMap == 'rare' ? 'disabledDiv' : ''" class="card mb-3 editCard">
+            <div class="row g-0">
+              <div class="col-md-4 rareCard">
+                <img src="../../../assets/images/honorShardMedium.png" [mtxTooltip]="sonorShardPounchMediumTogle"
+                [mtxTooltipPosition]="position.value" [width]="85" [height]="85" class="" alt="...">                  
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Honor Shard Pounch(M)</h5>
+                  <p>Each<input type="text" value={{honorShardPounchMediumEach}} class="form-control form-control-sm each" (keyup)="setHonorShardPounchMediumEach($event)" /></p>
+                  <p>Price<input type="text" class="form-control form-control-sm priceInput" (keyup)="setHonorShardPounchMediumPrice($event)" /></p>
+                  <p>Local Price : {{ honorShardPounchMediumEach *honorShardPounchMediumPrice }} Gold</p>
                 </div>
               </div>
+            </div>
+          </div>
 
         </div>
     </div>
-    <div class="col"><p>Total Prices: {{ (solarBlessingPrice * solarBlessingEach) + (solarGracePrice *solarGraceEach) + (honorShardPounchPrice * honorShardPounchEach) + (solarProtectionPrice * solarProtectionEach) }}</p></div>
+    <div class="row">
+      <div class="col">
+          
+        <div class="card mb-3 editCard">
+          <div class="row g-0">
+            <div class="col-md-4 uncommonCard">
+              <img src="../../../assets/images/solarGrace.png" [mtxTooltip]="solarGraceTogle"
+              [mtxTooltipPosition]="position.value" [width]="85" [height]="85" class="" alt="...">                  
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Solar Grace</h5>
+                <p>Each<input type="text" value={{solarGraceEach}} class="form-control form-control-sm each" (keyup)="setSolarGraceEach($event)" /></p>
+                <p>Price<input type="text" class="form-control form-control-sm priceInput" (keyup)="setSolarGracePrice($event)" /></p>
+                <p>Local Price: {{ solarGracePrice *solarGraceEach }} Gold</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col">
+          
+          <div [ngClass]="selectedMap == 'legendary' || selectedMap == 'epik' ? 'disabledDiv' : ''" class="card mb-3 editCard">
+              <div class="row g-0">
+                <div class="col-md-4 uncommonCard">
+                  <img src="../../../assets/images/honorShardSmall.png" [mtxTooltip]="honorShardPounchSmallTogle"
+                  [mtxTooltipPosition]="position.value" [width]="85" [height]="85" class="" alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Honor Shard Pounch(S)</h5>
+                    <p>Each<input type="text" value={{honorShardPounchSmallEach}} class="form-control form-control-sm each" (keyup)="setHonorShardPounchSmallEach($event)" /></p>
+                    <p>Price<input type="text" class="form-control form-control-sm priceInput" (keyup)="setHonorShardPounchSmallPrice($event)" /></p>
+                    <p>Local Price: {{ honorShardPounchSmallPrice * honorShardPounchSmallEach }} Gold</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+      </div>
+  </div>
+
+
+    <div class="col"><p>Total Prices: {{ (solarBlessingPrice * solarBlessingEach) + (solarGracePrice *solarGraceEach) + (honorShardPounchLargePrice * honorShardPounchLargeEach) + (solarProtectionPrice * solarProtectionEach) }}</p></div>
 
 </div>

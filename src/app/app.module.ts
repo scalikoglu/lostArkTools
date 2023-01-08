@@ -19,12 +19,14 @@ import { TopCardComponent } from './components/top-card/top-card.component';
 
 import {MatDividerModule} from '@angular/material/divider';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 import {MatGridListModule} from '@angular/material/grid-list';
 import { MapPriceCalculatorComponent } from './components/map-price-calculator/map-price-calculator.component';
 import { MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import { MtxTooltipModule } from '@ng-matero/extensions/tooltip';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,9 @@ import { MtxTooltipModule } from '@ng-matero/extensions/tooltip';
     MatGridListModule,
     MatSelectModule,
     MtxTooltipModule,
-    MatButtonModule
+    MatButtonModule,
+    MatButtonToggleModule,
+    FormsModule
 
   ],
   providers: [],
