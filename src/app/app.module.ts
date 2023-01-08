@@ -7,7 +7,6 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrModule } from 'ngx-toastr';
 import { BodyComponent } from './body/body.component';
 import { BookPriceCalculatorComponent } from './components/book-price-calculator/book-price-calculator.component';
 import { ItemXpCalculatorComponent } from './components/item-xp-calculator/item-xp-calculator.component';
@@ -24,10 +23,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { MapPriceCalculatorComponent } from './components/map-price-calculator/map-price-calculator.component';
 import { MatSelectModule} from '@angular/material/select';
-
+import {MatButtonModule} from '@angular/material/button';
 import { MtxTooltipModule } from '@ng-matero/extensions/tooltip';
-import { MtxGridModule } from '@ng-matero/extensions/grid';
-import { MtxSelectModule } from '@ng-matero/extensions/select';
 
 @NgModule({
   declarations: [
@@ -44,7 +41,6 @@ import { MtxSelectModule } from '@ng-matero/extensions/select';
     AppRoutingModule,
     CommonModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot(),
     MatTableModule,
     MatFormFieldModule,
     ReactiveFormsModule,
@@ -54,8 +50,7 @@ import { MtxSelectModule } from '@ng-matero/extensions/select';
     MatGridListModule,
     MatSelectModule,
     MtxTooltipModule,
-    MtxGridModule,
-    MtxSelectModule,
+    MatButtonModule
 
   ],
   providers: [],

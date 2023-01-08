@@ -52,6 +52,12 @@
   background-size: cover;
 }
 
+.test{
+  background-color: grey;
+  width: 350px;
+  height: 150px;
+}
+
 .mat-button-base {
   margin: 0 .5rem;
 }

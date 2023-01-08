@@ -2,16 +2,18 @@
     <div class="row">
         <div class="col">
             
-            <div class="card mb-3" style="max-width: 480px;">
+            <div class="card mb-3 editCard">
                 <div class="row g-0">
-                  <div class="col-md-4">
-                    <img src="..." class="img-fluid rounded-start" alt="...">
+                  <div class="col-md-4 epikCard ">
+                    <img src="../../../assets/images/solarProtection.png" [width]="85" [height]="85" class="" alt="...">
                   </div>
                   <div class="col-md-8">
+                    
                     <div class="card-body">
                       <h5 class="card-title">Solar Protection</h5>
-                      <p><input type="text" (keyup)="setSolarProtection($event)" /></p>
-                      <p>Solar Protection: {{ solarProtection }}</p>
+                      <p>Each<input type="text" value="4" class="form-control form-control-sm each" (keyup)="setSolarProtectionEach($event)" /></p>
+                      <p>Price<input type="text" class="form-control form-control-sm priceInput" (keyup)="setSolarProtectionPrice($event)" /></p>
+                      <p>Solar Protection: {{ solarProtectionPrice * solarProtectionEach }}</p>
                     </div>
                   </div>
                 </div>
@@ -20,16 +22,17 @@
         </div>
         <div class="col">
             
-            <div class="card mb-3" style="max-width: 480px;">
+            <div class="card mb-3 editCard">
                 <div class="row g-0">
-                  <div class="col-md-4">
-                    <img src="..." class="img-fluid rounded-start" alt="...">
+                  <div class="col-md-4 epikCard">
+                    <img src="../../../assets/images/honorShardLarge.png" [width]="85" [height]="85" class="" alt="...">
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
                       <h5 class="card-title">Honor Shard Pounch(L)</h5>
-                      <p><input type="text" (keyup)="setHonorShardPounch($event)" /></p>
-                      <p>Honor Shard Pounch(L): {{ honorShardPounch }}</p>
+                      <p>Each<input type="text" value="8" class="form-control form-control-sm each" (keyup)="setHonorShardPounchEach($event)" /></p>
+                      <p>Price<input type="text" class="form-control form-control-sm priceInput" (keyup)="setHonorShardPounchPrice($event)" /></p>
+                      <p>Honor Shard Pounch: {{ honorShardPounchPrice * honorShardPounchEach }}</p>
                     </div>
                   </div>
                 </div>
@@ -40,16 +43,17 @@
     <div class="row">
         <div class="col">
             
-            <div class="card mb-3" style="max-width: 480px;">
+            <div class="card mb-3 editCard">
                 <div class="row g-0">
-                  <div class="col-md-4">
-                    <img src="..." class="img-fluid rounded-start" alt="...">
+                  <div class="col-md-4 uncommonCard">
+                    <img src="../../../assets/images/solarGrace.png" [width]="85" [height]="85" class="" alt="...">                  
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
                       <h5 class="card-title">Solar Grace</h5>
-                      <p><input type="text" (keyup)="setSolarGrace($event)" /></p>
-                      <p>Solar Grace: {{ solarGrace }}</p>
+                      <p>Each<input type="text" value="8" class="form-control form-control-sm each" (keyup)="setSolarGraceEach($event)" /></p>
+                      <p>Price<input type="text" class="form-control form-control-sm priceInput" (keyup)="setSolarGracePrice($event)" /></p>
+                      <p>Solar Grace: {{ solarGracePrice *solarGraceEach }}</p>
                     </div>
                   </div>
                 </div>
@@ -58,16 +62,17 @@
         </div>
         <div class="col">
             
-            <div class="card mb-3" style="max-width: 480px;">
+            <div class="card mb-3 editCard">
                 <div class="row g-0">
-                  <div class="col-md-4">
-                    <img src="..." class="img-fluid rounded-start" alt="...">
+                  <div class="col-md-4 rareCard">
+                    <img src="../../../assets/images/solarBlessing.png" [width]="85" [height]="85" class="" alt="...">
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
                       <h5 class="card-title">Solar Blessing</h5>
-                      <p><input type="text" (keyup)="getSolarBlessing($event)" /></p>
-                      <p>Solar Blessing: {{ solarBlessing }}</p>
+                      <p>Each<input type="text" value="12" class="form-control form-control-sm each" (keyup)="setSolarBlessingEach($event)" /></p>
+                      <p>Price<input type="text" class="form-control form-control-sm priceInput" (keyup)="setSolarBlessingPrice($event)" /></p>
+                      <p>Solar Blessing: {{ solarBlessingPrice * solarBlessingEach }}</p>
                     </div>
                   </div>
                 </div>
@@ -75,4 +80,6 @@
 
         </div>
     </div>
+    <div class="col"><p>Total Prices: {{ (solarBlessingPrice * solarBlessingEach) + (solarGracePrice *solarGraceEach) + (honorShardPounchPrice * honorShardPounchEach) + (solarProtectionPrice * solarProtectionEach) }}</p></div>
+
 </div>

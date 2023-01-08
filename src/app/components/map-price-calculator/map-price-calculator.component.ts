@@ -6,34 +6,49 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./map-price-calculator.component.css']
 })
 export class MapPriceCalculatorComponent implements OnInit {
-  solarProtection:number = 0
-  solarBlessing:number = 0
-  solarGrace:number = 0
-  honorShardPounch:number = 0
+  solarProtectionEach:number = 4
+  solarBlessingEach:number = 8
+  solarGraceEach:number = 12
+  honorShardPounchEach:number = 8
+
+  solarProtectionPrice:number = 0
+  solarBlessingPrice:number = 0
+  solarGracePrice:number = 0
+  honorShardPounchPrice:number = 0
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  setSolarProtection(value: any) {
-    this.solarProtection = value.target.value
-
+  //Set item price
+  setSolarProtectionPrice(value: any) {
+    this.solarProtectionPrice = value.target.value
+  }
+  setHonorShardPounchPrice(value: any) {
+    this.honorShardPounchPrice = value.target.value
+  }
+  setSolarGracePrice(value: any) {
+    this.solarGracePrice = value.target.value
+  }
+  setSolarBlessingPrice(value: any) {
+    this.solarBlessingPrice = value.target.value
   }
 
-  setHonorShardPounch(value: any) {
-    this.honorShardPounch = value.target.value
 
+  //Set item each
+  setSolarProtectionEach(value: any) {
+    this.solarProtectionEach = value.target.value
   }
-
-  setSolarGrace(value: any) {
-    this.solarGrace = value.target.value
-
+  setHonorShardPounchEach(value: any) {
+    this.honorShardPounchEach = value.target.value
   }
-
-  getSolarBlessing(value: any) {
-    this.solarBlessing = value.target.value
-
+  setSolarGraceEach(value: any) {
+    this.solarGraceEach = value.target.value
   }
+  setSolarBlessingEach(value: any) {
+    this.solarBlessingEach = value.target.value
+  }
+  
 
 }
 

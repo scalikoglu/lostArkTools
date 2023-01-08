@@ -1,7 +1,6 @@
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
 import { Component, Output, EventEmitter, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
 import { navbarData } from './nav-data';
 
 interface SideNavToggle {
@@ -48,7 +47,7 @@ export class SidenavComponent implements OnInit {
   navData = navbarData;
   login=false;
 
-  constructor(private router: Router, private toasterService:ToastrService){
+  constructor(private router: Router){
 
   }
 
@@ -77,7 +76,6 @@ export class SidenavComponent implements OnInit {
   }
   logout(){
     if (confirm('Çıkış yapmak istiyor musun?')) {
-    this.toasterService.info("Başarıyla çıkış yapıldı.")
     this.router.navigate(["login"])
   }}
 

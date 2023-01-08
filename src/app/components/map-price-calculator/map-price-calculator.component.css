@@ -1,0 +1,40 @@
+.epikCard {
+    background-color: blueviolet;
+    display:flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+.legendaryCard {
+    background-color: orange;
+    display:flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+.rareCard {
+    background-color: blue;
+    display:flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+.uncommonCard {
+    background-color: green;
+    display:flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+.editCard{
+    max-width: 350px;
+    
+}
+
+.each{
+    max-width: 55%;
+}
+
+.priceInput{
+    max-width: 75%;
+}
