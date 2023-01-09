@@ -27,7 +27,7 @@
 }
 
 .editCard{
-    max-width: 350px;
+    max-width: 500px;
     
 }
 
@@ -46,29 +46,56 @@
 }
 
 .legendaryTogle{
-    background-color: orange;
-    width: 350px;
-    height: 150px;
+    background-color: black;
+    height: 250px;
     opacity: 0.9;
+    border:3px solid black;
+    box-shadow: 5px 10px;
   }
 
   .epikTogle{
-    background-color: blueviolet;
-    width: 350px;
-    height: 150px;
+    background-color: black;
+    height: 250px;
     opacity: 0.9;
+    border:3px solid black;
+    box-shadow: 5px 10px;
+
   }
 
   .uncommonTogle{
-    background-color: green;
-    width: 350px;
-    height: 150px;
+    background-color: black;
+    height: 250px;
     opacity: 0.9;
+    border:3px solid black;
+    box-shadow: 5px 10px;
   }
 
   .rareTogle{
-    background-color: blue;
-    width: 350px;
-    height: 150px;
+    background-color: black;
+    height: 240px;
     opacity: 0.9;
+  }
+
+  .customCard{
+    font-size: 10px;
+  }
+
+  .continentCard{
+    font-size: 7px;
+  }
+
+  .entryItemCard{
+    color: #E67E22 ;
+  }
+
+  .openMapCard{
+color: #F9E79F;
+  }
+
+  .cannotBeCard{
+color: #A93226;
+  }
+
+  .whereCard{
+color: #5DADE2;
   }

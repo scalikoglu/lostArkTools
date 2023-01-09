@@ -2,41 +2,89 @@
 
 <ng-template #legendaryMapTogle>
   <div class="legendaryTogle">
-  <div [style]="{color:'#198754'}">This is a template!</div>
-  <div>Ceci est un modèle!</div>
-  <div>这是一个模板!</div>
-  <div>これはテンプレートです!</div>
-  <div class="text-right">هذا قالب!</div>
+  <div [style]="{color:'orange'}">Secret Map</div>
+  <div>
+    
+    <div class="mb-3" style="max-width: 350px; background-color: orange;" [style]="{color:'black'}">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="../../../assets/images/lostArkMaps.png" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Legendary</h5>
+            <p class="card-text" ><small >Item Lv. 1300(Tier 3)</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="customCard">Binds when obtained </div>
+  <div class="continentCard">This key opens a secret area that is hidden away somewhere on the continent.</div>
+  <div class="entryItemCard">Entry Item Lv.: 1,300</div>
+  <div class="openMapCard">Right-click to open the Map.</div>
+  <div class="cannotBeCard">Cannot bedismantled</div>
+  <div class="whereCard">[Chaos Gate] Punika</div>
+
 </div>
 </ng-template>
 
 <ng-template #epikMapTogle>
   <div class="epikTogle">
-  <div [style]="{color:'#198754'}">This is a template!</div>
-  <div>Ceci est un modèle!</div>
-  <div>这是一个模板!</div>
-  <div>これはテンプレートです!</div>
-  <div class="text-right">هذا قالب!</div>
-</div>
-</ng-template>
-
-<ng-template #rareMapTogle>
-  <div class="rareTogle">
-  <div [style]="{color:'#198754'}">This is a template!</div>
-  <div>Ceci est un modèle!</div>
-  <div>这是一个模板!</div>
-  <div>これはテンプレートです!</div>
-  <div class="text-right">هذا قالب!</div>
+    <div [style]="{color:'purple'}">Secret Map</div>
+    <div>
+      
+      <div class="mb-3" style="max-width: 350px; background-color: purple;" [style]="{color:'black'}">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="../../../assets/images/lostArkMaps.png" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Legendary</h5>
+              <p class="card-text" ><small >Item Lv. 1290(Tier 3)</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+    <div class="customCard">Binds when obtained </div>
+    <div class="continentCard">This key opens a secret area that is hidden away somewhere on the continent.</div>
+    <div class="entryItemCard">Entry Item Lv.: 1,290</div>
+    <div class="openMapCard">Right-click to open the Map.</div>
+    <div class="cannotBeCard">Cannot bedismantled</div>
+    <div class="whereCard">[Chaos Gate] Punika</div>
 </div>
 </ng-template>
 
 <ng-template #uncommonMapTogle>
-  <div class="uncommontogle">
-  <div [style]="{color:'#198754'}">This is a template!</div>
-  <div>Ceci est un modèle!</div>
-  <div>这是一个模板!</div>
-  <div>これはテンプレートです!</div>
-  <div class="text-right">هذا قالب!</div>
+  <div class="uncommonTogle">
+    <div [style]="{color:'green'}">Secret Map</div>
+    <div>
+      
+      <div class="mb-3" style="max-width: 350px; background-color: green;" [style]="{color:'black'}">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="../../../assets/images/lostArkMaps.png" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Legendary</h5>
+              <p class="card-text" ><small >Item Lv. 1280(Tier 3)</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+    <div class="customCard">Binds when obtained </div>
+    <div class="continentCard">This key opens a secret area that is hidden away somewhere on the continent.</div>
+    <div class="entryItemCard">Entry Item Lv.: 1,280</div>
+    <div class="openMapCard">Right-click to open the Map.</div>
+    <div class="cannotBeCard">Cannot bedismantled</div>
+    <div class="whereCard">[Chaos Gate] Punika</div>
 </div>
 </ng-template>
 
@@ -115,7 +163,7 @@
             [mtxTooltipPosition]="position.value" [width]="60" [height]="60" class="" alt="...">
         </mat-button-toggle>
         <mat-button-toggle value="rare" class="rareCard" (click)="setRareMap()">
-          <img src="../../../assets/images/lostArkMaps.png" [mtxTooltip]="rareMapTogle"
+          <img src="../../../assets/images/lostArkMaps.png" [mtxTooltip]="uncommonMapTogle"
           [mtxTooltipPosition]="position.value" [width]="60" [height]="60" class="" alt="...">
       </mat-button-toggle>
       </mat-button-toggle-group>
