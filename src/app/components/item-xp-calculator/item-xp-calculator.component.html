@@ -1,1 +1,23 @@
-<p>item-xp-calculator works!</p>
+<p (click)="setHiddenDiv()">"item-xp-calculator" Will be added soon!</p>
+
+    <div class="card" style="width: 18rem;">
+        
+        <div *ngIf="hiddenDiv">
+            <div class="row g-0">
+              <div class="col-md-4 epikCard ">
+                <img src="../../../assets/images/solarProtection.png" [width]="85" [height]="85" class="" alt="...">
+              </div>
+              <div class="col-md-8">
+                
+                <div class="card-body">
+                  <h5 class="card-title">Solar Protection</h5>
+                  <p>Total Game: {{currentTotalGame}}<input type="text" value={{currentTotalGame}} class="form-control form-control-sm each" (keyup)="setTotalGame($event)" /></p>
+                  <p>Win Rate: {{currentWinRate}}<input type="text" value={{currentWinRate}} class="form-control form-control-sm priceInput" (keyup)="setRateGame($event)" /></p>
+                  <p>Aim Rate: {{currentAimRate}}<input type="text" value={{currentAimRate}} class="form-control form-control-sm priceInput" (keyup)="setAimRateGame($event)" /></p>
+                  <p>Need Win Streak: {{ needWinGame }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+    </div>
