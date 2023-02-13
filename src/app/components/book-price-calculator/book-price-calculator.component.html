@@ -12,12 +12,12 @@
         </mat-card-header>
         <img mat-card-image src="../../../assets/images/engravingBook.jpg" alt="lostArkEngraving">
         <mat-card-content>
-          <p><input type="text" (keyup)="onSubmit($event)" /></p>
-          <p>Book Price: {{ price }}</p>
+          <p><input type="text" value={{price}} (keyup)="onSubmit($event)" /></p>
+          <p>Book Price: {{ price }} Gold</p>
         </mat-card-content>
         <mat-card-actions>
           <button mat-button>Hesapla</button>
-          <button mat-button>Sıfırla</button>
+          <button mat-button (click)="clearIt()">Sıfırla</button>
         </mat-card-actions>
 
       </mat-card>

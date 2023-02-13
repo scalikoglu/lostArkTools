@@ -27,7 +27,7 @@ export class BookPriceCalculatorComponent implements OnInit {
 
   displayedColumns: string[] = ['type', 'offer', 'income', 'myProfit', 'teamProfit'];
   dataSource: any
-  price: any 
+  price: any = 0
  
   positionOptions: TooltipPosition[] = ['after', 'before', 'above', 'below', 'left', 'right'];
   position = new UntypedFormControl(this.positionOptions[0]);
@@ -38,10 +38,10 @@ export class BookPriceCalculatorComponent implements OnInit {
 
   ngOnInit(): void {
     const ELEMENT_DATA: PeriodicElement[] = [
-      {position: 1, type: 'En İyi Teklif', offer: 0,income:0, myProfit: 0, teamProfit: 0},
-      {position: 2, type: 'Ortalama Teklif', offer: 0,income:0, myProfit: 0, teamProfit: 0},
-      {position: 3, type: 'Kötü Teklif', offer: 0,income:0, myProfit: 0, teamProfit: 0},
-      {position: 4, type: 'Zarar Teklif', offer: 0,income:0, myProfit: 0, teamProfit: 0},
+      {position: 1, type: 'Best Offer', offer: 0,income:0, myProfit: 0, teamProfit: 0},
+      {position: 2, type: 'Average Offer', offer: 0,income:0, myProfit: 0, teamProfit: 0},
+      {position: 3, type: 'Bad Offer', offer: 0,income:0, myProfit: 0, teamProfit: 0},
+      {position: 4, type: 'Cost Offer', offer: 0,income:0, myProfit: 0, teamProfit: 0},
     ];
     this.dataSource = ELEMENT_DATA;
   }
@@ -82,13 +82,26 @@ export class BookPriceCalculatorComponent implements OnInit {
     let Income = Deal - TeamPrice
 
     const ELEMENT_DATA: PeriodicElement[] = [
-      {position: 1, type: 'En İyi Teklif', offer: Math.round(bestBit),income:Math.round(bestIncome), myProfit: Math.round(bestDeal), teamProfit: Math.round(bestTeamPrice)},
-      {position: 2, type: 'Ortalama Teklif', offer: Math.round(goodBit),income:Math.round(goodIncome), myProfit: Math.round(goodDeal), teamProfit: Math.round(goodTeamPrice)},
-      {position: 3, type: 'Kötü Teklif', offer: Math.round(normalBit),income:Math.round(normalIncome), myProfit: Math.round(normalDeal), teamProfit: Math.round(normalTeamPrice)},
-      {position: 4, type: 'Zarar Teklif', offer: Math.round(Bit),income:Math.round(Income), myProfit: Math.round(Deal), teamProfit: Math.round(TeamPrice)},
+      {position: 1, type: 'Best Offer', offer: Math.round(bestBit),income:Math.round(bestIncome), myProfit: Math.round(bestDeal), teamProfit: Math.round(bestTeamPrice)},
+      {position: 2, type: 'Average Offer', offer: Math.round(goodBit),income:Math.round(goodIncome), myProfit: Math.round(goodDeal), teamProfit: Math.round(goodTeamPrice)},
+      {position: 3, type: 'Bad Offer', offer: Math.round(normalBit),income:Math.round(normalIncome), myProfit: Math.round(normalDeal), teamProfit: Math.round(normalTeamPrice)},
+      {position: 4, type: 'Cost Offer', offer: Math.round(Bit),income:Math.round(Income), myProfit: Math.round(Deal), teamProfit: Math.round(TeamPrice)},
     ];
 
     this.dataSource = ELEMENT_DATA;
+  }
+
+  clearIt(){
+    this.price = 0
+
+    const ELEMENT_DATA: PeriodicElement[] = [
+      {position: 1, type: 'Best Offer', offer: 0,income:0, myProfit: 0, teamProfit: 0},
+      {position: 2, type: 'Average Offer', offer: 0,income:0, myProfit: 0, teamProfit: 0},
+      {position: 3, type: 'Bad Offer', offer: 0,income:0, myProfit: 0, teamProfit: 0},
+      {position: 4, type: 'Cost Offer', offer: 0,income:0, myProfit: 0, teamProfit: 0},
+    ];
+    this.dataSource = ELEMENT_DATA;
+
   }
 
 }
